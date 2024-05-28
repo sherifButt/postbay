@@ -1,0 +1,20 @@
+{
+  "name": "y",
+  "version": "y",
+  "main": "backend/index.js",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "start:frontend":"yarn workspace frontend start",
+    "start:backend":"yarn workspace backend start",
+    "start": "concurrently \"export NODE_NO_WARNINGS=1 && yarn workspace frontend start\" \"yarn workspace backend start\"",
+    "build": "yarn workspace frontend build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
